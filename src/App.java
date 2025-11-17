@@ -1,5 +1,15 @@
+import modelo.BaseDeDatos;
+import vista.InventarioVista;
+import controlador.ControladorInventario;
+
 public class App {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+
+    public static void main(String[] args) {
+
+        BaseDeDatos modelo = new BaseDeDatos();
+        InventarioVista vista = new InventarioVista();
+        ControladorInventario controlador = new ControladorInventario(modelo, vista);
+
+        controlador.iniciar();
     }
 }
